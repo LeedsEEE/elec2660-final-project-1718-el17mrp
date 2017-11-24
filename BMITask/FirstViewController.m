@@ -10,12 +10,19 @@
 
 @interface FirstViewController ()
 
+
 @end
 
 @implementation FirstViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.heightLabel.text = [NSString stringWithFormat:@"Adjust height using slider"];
+    self.weightLabel.text = [NSString stringWithFormat:@"Adjust weight using slider"];
+    self.BMILabel.text = [NSString stringWithFormat:@"Set height and weight using the sliders"];
+    self.classificationLabel.text = [NSString stringWithFormat:@"Set height and weight to find out your BMI classification"];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -24,6 +31,58 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+- (IBAction)heightMoved:(UISlider *)sender {
+    
+    self.heightLabel.text = [NSString stringWithFormat:@"Height = %.5f", sender.value];
+    self.height = [sender value];
+    self.BMI = (self.weight)/((self.height/100)*(self.height/100));
+    
+   self.BMILabel.text = [NSString stringWithFormat:@"BMI = %.f", self.BMI];
+}
+
+- (IBAction)weightMoved:(UISlider *)sender {
+    self.weightLabel.text = [NSString stringWithFormat:@"Weight = %.5f", sender.value];
+    self.weight = [sender value];
+    self.BMI = (self.weight)/((self.height/100)*(self.height/100));
+    
+    
+    self.BMILabel.text = [NSString stringWithFormat:@"BMI = %.2f", self.BMI];
+    
+    
+    
+    if (self.BMI < 15) {
+        self.classificationLabel.text = [NSString stringWithFormat:@"Very severely underweight"];
+    }
+    if (15 < self.BMI && self.BMI < 16) {
+        self.classificationLabel.text = [NSString stringWithFormat:@"Severely underweight"];
+    }
+    if (16 < self.BMI && self.BMI < 18.5) {
+        self.classificationLabel.text = [NSString stringWithFormat:@"Underweight"];
+    }
+    if (18.5 < self.BMI && self.BMI < 25) {
+        self.classificationLabel.text = [NSString stringWithFormat:@"Healthy Weight"];
+    }
+    if (25 < self.BMI && self.BMI < 30) {
+        self.classificationLabel.text = [NSString stringWithFormat:@"Overweight"];
+    }
+    if (30 < self.BMI && self.BMI < 35) {
+        self.classificationLabel.text = [NSString stringWithFormat:@"Moderately obese"];
+    }
+    if (35 < self.BMI && self.BMI < 40) {
+        self.classificationLabel.text = [NSString stringWithFormat:@"Severely obese"];
+    }
+    if (40 < self.BMI) {
+        self.classificationLabel.text = [NSString stringWithFormat:@"Very severely obese"];
+    }
+    
+    
+    
+    }
+    
+
+
 
 
 @end
