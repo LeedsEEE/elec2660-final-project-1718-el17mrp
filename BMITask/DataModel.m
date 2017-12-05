@@ -19,8 +19,16 @@
         Classification *VSU =  [[Classification alloc] init];
         VSU.title = @"Very severely underweight";
         VSU.bmirange = @"15 < BMI < 16";
-        VSU.comment = @"At this BMI you are dangerously underweight and should sharply increase caloric intake";
+        VSU.comment = @"You are dangerously underweight and risk health problems";
         VSU.surplus = @"Increase caloric intake by 750 calories each day";
+        
+        self.bmiclassifications = [NSMutableArray array];
+        Classification *SU =  [[Classification alloc] init];
+        SU.title = @"Very severely underweight";
+        SU.bmirange = @"15 < BMI < 16";
+        SU.comment = @"You are dangerously underweight and risk health problems";
+        SU.surplus = @"Increase caloric intake by 750 calories each day";
+        
         
         
         [self.bmiclassifications addObject:VSU];

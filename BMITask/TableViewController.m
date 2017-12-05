@@ -7,6 +7,8 @@
 //
 
 #import "TableViewController.h"
+#import "Classification.h"
+#import "DataModel.h"
 
 @interface TableViewController ()
 
@@ -111,9 +113,18 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    if([[segue]])
+    if ([[segue identifier] isEqualToString:@"ShowClassificationDetails"]){
+        
+        ViewController *destinationViewController = [segue destinationViewController];
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        if (indexPath.section == 0) {
+            
+            Classification *tempClass = [self.data.bmiclassifications objectAtIndex:indexPath.row];
+           destinationViewController.classification = tempClass;
+        }
     
+    }
 }
-
 
 @end
