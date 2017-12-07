@@ -70,7 +70,7 @@
         VSO.title = @"Very Severely Overweight";
         VSO.bmirange = @"35 < BMI < 40";
         VSO.comment = @"You are extremely overweight and risk health problems";
-        VSO.surplus = @"Decrease your caloric intake by 500 calroies per day and increase activity levels";
+        VSO.surplus = @"Decrease caloric intake by 500 calroies per day & increase activity levels";
         
         
         [self.bmiclassifications addObject:VSU];

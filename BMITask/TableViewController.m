@@ -62,8 +62,8 @@
     if(indexPath.section == 0){
         Classification *tempClass = [self.data.bmiclassifications objectAtIndex:indexPath.row];
         
-        cell.textLabel.text = tempClass.title;
-        cell.detailTextLabel.text = tempClass.bmirange;
+        cell.textLabel.text = tempClass.bmirange;
+        
     }
         
     
