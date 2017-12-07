@@ -22,7 +22,7 @@
         VSU.comment = @"You are dangerously underweight and risk health problems";
         VSU.surplus = @"Increase caloric intake by 750 calories each day";
         
-        self.bmiclassifications = [NSMutableArray array];
+        
         Classification *SU =  [[Classification alloc] init];
         SU.title = @"Severely underweight";
         SU.bmirange = @"15 < BMI < 16";
@@ -30,47 +30,47 @@
         SU.surplus = @"Increase caloric intake by 500 calories each day";
         
         
-        self.bmiclassifications = [NSMutableArray array];
+        
         Classification *U =  [[Classification alloc] init];
-        SU.title = @"Underweight";
-        SU.bmirange = @"16 < BMI < 18.5";
-        SU.comment = @"You are underweight";
-        SU.surplus = @"Increase caloric intake by 250 calories each day";
+        U.title = @"Underweight";
+        U.bmirange = @"16 < BMI < 18.5";
+        U.comment = @"You are underweight";
+        U.surplus = @"Increase caloric intake by 250 calories each day";
         
-        self.bmiclassifications = [NSMutableArray array];
+        
         Classification *H =  [[Classification alloc] init];
-        SU.title = @"Healthy weight";
-        SU.bmirange = @"18.5 < BMI < 25";
-        SU.comment = @"You are a healthy weight";
-        SU.surplus = @"Maintain your caloric consumption";
+        H.title = @"Healthy weight";
+        H.bmirange = @"18.5 < BMI < 25";
+        H.comment = @"You are a healthy weight";
+        H.surplus = @"Maintain your caloric consumption";
         
-        self.bmiclassifications = [NSMutableArray array];
+        
         Classification *O =  [[Classification alloc] init];
-        SU.title = @"Overweight";
-        SU.bmirange = @"25 < BMI < 30";
-        SU.comment = @"You are overweight";
-        SU.surplus = @"Decrease your caloric intake by 100 calroies per day";
+        O.title = @"Overweight";
+        O.bmirange = @"25 < BMI < 30";
+        O.comment = @"You are overweight";
+        O.surplus = @"Decrease your caloric intake by 100 calroies per day";
         
-        self.bmiclassifications = [NSMutableArray array];
+        
         Classification *MO =  [[Classification alloc] init];
-        SU.title = @"Moderately Overweight";
-        SU.bmirange = @"30 < BMI < 35";
-        SU.comment = @"You are moderately overweight";
-        SU.surplus = @"Decrease your caloric intake by 250 calroies per day";
+        MO.title = @"Moderately Overweight";
+        MO.bmirange = @"30 < BMI < 35";
+        MO.comment = @"You are moderately overweight";
+        MO.surplus = @"Decrease your caloric intake by 250 calroies per day";
         
-        self.bmiclassifications = [NSMutableArray array];
+        
         Classification *SO =  [[Classification alloc] init];
-        SU.title = @"Severely Overweight";
-        SU.bmirange = @"35 < BMI < 40";
-        SU.comment = @"You are severely overweight and risk health problems";
-        SU.surplus = @"Decrease your caloric intake by 500 calroies per day";
+        SO.title = @"Severely Overweight";
+        SO.bmirange = @"35 < BMI < 40";
+        SO.comment = @"You are severely overweight and risk health problems";
+        SO.surplus = @"Decrease your caloric intake by 500 calroies per day";
         
-        self.bmiclassifications = [NSMutableArray array];
+        
         Classification *VSO =  [[Classification alloc] init];
-        SU.title = @"Very Severely Overweight";
-        SU.bmirange = @"35 < BMI < 40";
-        SU.comment = @"You are extremely overweight and risk health problems";
-        SU.surplus = @"Decrease your caloric intake by 500 calroies per day and increase activity levels";
+        VSO.title = @"Very Severely Overweight";
+        VSO.bmirange = @"35 < BMI < 40";
+        VSO.comment = @"You are extremely overweight and risk health problems";
+        VSO.surplus = @"Decrease your caloric intake by 500 calroies per day and increase activity levels";
         
         
         [self.bmiclassifications addObject:VSU];
@@ -81,6 +81,8 @@
         [self.bmiclassifications addObject:MO];
         [self.bmiclassifications addObject:SO];
         [self.bmiclassifications addObject:VSO];
+        
+        
         
     }
     return self;

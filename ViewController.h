@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Classification.h"
+#import "DataModel.h"
 
 @interface ViewController : UIViewController
 
