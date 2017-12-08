@@ -15,7 +15,7 @@
     self = [super init];
     if (self) {
         
-        self.bmiclassifications = [NSMutableArray array];
+        self.bmiclassifications = [NSMutableArray array];                               //Various BMI Classifications are declared here and entered into an array
         Classification *VSU =  [[Classification alloc] init];
         VSU.title = @"Very severely underweight";
         VSU.bmirange = @"BMI < 15";

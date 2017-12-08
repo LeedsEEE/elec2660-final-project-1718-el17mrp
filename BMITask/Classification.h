@@ -10,7 +10,7 @@
 
 @interface Classification : NSObject
 
-@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *title;                      //Class properties for the BMI classifications
 @property (nonatomic, strong) NSString *bmirange;
 @property (nonatomic, strong) NSString *comment;
 @property (nonatomic, strong) NSString *surplus;

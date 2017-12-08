@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.heightLabel.text = [NSString stringWithFormat:@"Adjust height using slider"];
+    self.heightLabel.text = [NSString stringWithFormat:@"Adjust height using slider"];                      //Here labels are set in order to guide the user on how to use the app
     self.weightLabel.text = [NSString stringWithFormat:@"Adjust weight using slider"];
     self.BMILabel.text = [NSString stringWithFormat:@"Set height and weight using the sliders"];
     self.classificationLabel.text = [NSString stringWithFormat:@"Set height and weight to find out your BMI classification"];
@@ -35,7 +35,7 @@
 
 - (IBAction)heightMoved:(UISlider *)sender {
     
-    self.heightLabel.text = [NSString stringWithFormat:@"Height = %.5f", sender.value];
+    self.heightLabel.text = [NSString stringWithFormat:@"Height = %.5f", sender.value];             //The height slider will update the value of BMI when adjusted
     self.height = [sender value];
     self.BMI = (self.weight)/((self.height/100)*(self.height/100));
     
@@ -43,7 +43,7 @@
 }
 
 - (IBAction)weightMoved:(UISlider *)sender {
-    self.weightLabel.text = [NSString stringWithFormat:@"Weight = %.5f", sender.value];
+    self.weightLabel.text = [NSString stringWithFormat:@"Weight = %.5f", sender.value];             //The weight slider will update the value of the BMI when adjusted
     self.weight = [sender value];
     self.BMI = (self.weight)/((self.height/100)*(self.height/100));
     
@@ -51,7 +51,7 @@
     self.BMILabel.text = [NSString stringWithFormat:@"BMI = %.2f", self.BMI];
     
     
-    
+                                                                                                            //BMI Classifications are set here
     if (self.BMI < 15) {
         self.classificationLabel.text = [NSString stringWithFormat:@"Very severely underweight"];
     }

@@ -12,7 +12,7 @@
 
 @interface ViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;                   //Labels are required in order to display each property of each BMI classification
 @property (weak, nonatomic) IBOutlet UILabel *classificationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *commentLabel;
 @property (weak, nonatomic) IBOutlet UILabel *surplusLabel;

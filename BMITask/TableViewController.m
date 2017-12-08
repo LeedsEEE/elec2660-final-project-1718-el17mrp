@@ -46,9 +46,9 @@
     
     NSInteger numberOfRows;
     
-    if (section == 0) {
-        numberOfRows = self.data.bmiclassifications.count;
-    }
+    
+    numberOfRows = self.data.bmiclassifications.count;      //The number of rows is equal to the number of items in the array containing the BMI classifications
+    
 
     return numberOfRows;
 }
@@ -59,12 +59,12 @@
     
     // Configure the cell...
     
-    if(indexPath.section == 0){
-        Classification *tempClass = [self.data.bmiclassifications objectAtIndex:indexPath.row];
+    
+    Classification *tempClass = [self.data.bmiclassifications objectAtIndex:indexPath.row]; //The row is taken from the index of the array containing each BMI classification
         
-        cell.textLabel.text = tempClass.bmirange;
-        
-    }
+    cell.textLabel.text = tempClass.bmirange;
+    
+    
         
     
     return cell;
@@ -113,16 +113,16 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    if ([[segue identifier] isEqualToString:@"ShowClassificationDetails"]){
+    if ([[segue identifier] isEqualToString:@"ShowClassificationDetails"]){     //The details of each row of the tableview will display the class properties of each respective object in the table
         
         ViewController *destinationViewController = [segue destinationViewController];
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
-        if (indexPath.section == 0) {
+        
             
-            Classification *tempClass = [self.data.bmiclassifications objectAtIndex:indexPath.row];
-           destinationViewController.classification = tempClass;
-        }
+        Classification *tempClass = [self.data.bmiclassifications objectAtIndex:indexPath.row];
+        destinationViewController.classification = tempClass;
+        
     
     }
 }
